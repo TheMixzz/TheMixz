@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'All American';
+    src: url("assets/font/All_American.ttf");
+}
+@font-face {
+    font-family: "Khmer Os Bokor";
+    src: url("assets/font/KhmerOSbokor.ttf");
+}
+body {
+    margin: 0;
+    text-align: center;
+    background-color:sienna;
+    background-image: url("assets/image/space.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1 {
+    font-size: 4em;
+    font-family: "Khmer Os Bokor";
+    color:slategray
+}
+h2 {
+    font-size: 4em;
+    font-family: 'All American';
+    color:orange;
+    display: inline-block;
+    width: 100%;
+}
+.text-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px; /* Add some space inside the box */
+    border-radius: 5px; /* Optional: Rounds the corners of the box */
+    display: inline-block; /* Allows the box to shrink-wrap to the content */
+    margin: 10px; /* Adds some space outside the box */
+}
+.container {
+    text-align: left; /* Aligns the content to the left */
+}
