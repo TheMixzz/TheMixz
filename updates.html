@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updates - TheMixz Bot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container text-center">
+            <h1 class="bot-name">
+                The <span class="logo">
+                    <img src="./assets/image/profile.png" alt="TheMixz Logo" style="max-width: 50px;">
+                </span> Mixz
+            </h1>
+            <nav role="navigation">
+                <ul class="nav justify-content-center">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="commands.html">Commands</a></li>
+                    <li><a href="updates.html">Updates</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="updates-content">
+        <h1>Updates</h1>
+
+        <!-- Latest Update Section -->
+        <div id="latestUpdate" class="update latest-update">
+            <h2>Latest Update</h2>
+            <!-- Latest update content will be inserted here -->
+        </div>
+
+        <!-- All Updates Section -->
+        <h2>All Updates</h2>
+        <div id="updatesAccordion" class="accordion">
+            <!-- Updates will be dynamically added here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>
+          ██████████╗██╗░░░██╗███████╗███╗░░░███╗██████████╗██═╗░░░░██╗██████████╗<Br>
+            ░╚══██╔═══╝██║░░░██║██╔════╝████╗░████║░░░░██╔═══╝░░██═╗██╔═╝░░░░░░███╔╝<Br>
+              ░░░░██║░░░░████████║█████╗░░██╔████╔██║░░░░██║░░░░░░░░██╔═╝░░░░░████╔═╝░<Br>
+                ░░░░██║░░░░██╔═══██║██╔══╝░░██║╚██╔╝██║░░░░██║░░░░░░██╔╝██═╗░░███╔══╝░░░<Br>
+                  ░░░░██║░░░░██║░░░██║███████╗██║░╚═╝░██║██████████╗██╔═╝░░░██╗██████████╗<Br>
+                    ░░░░╚═╝░░░░╚═╝░░░╚═╝╚══════╝╚═╝░░░░░╚═╝╚═════════╝╚═╝░░░░░╚═╝╚═════════╝<Br>
+          </p>
+        <p>&copy; 2024 TheMixz Bot.</p>
+      </footer>
+
+    <script src="./update.js"></script>
+    <script>
+        // Load updates from updates.js
+        const updatesAccordion = document.getElementById("updatesAccordion");
+        const latestUpdateDiv = document.getElementById("latestUpdate");
+    
+        // Display the latest update
+        if (updates.length > 0) {
+            const latestUpdate = updates[updates.length - 1];
+            latestUpdateDiv.innerHTML = `
+                <h3>Update ${updates.length}</h3>
+                <p>${latestUpdate}</p>
+            `;
+        } else {
+            latestUpdateDiv.innerHTML = "<p>No updates available.</p>";
+        }
+    
+        // Populate all older updates in descending order (from latest to oldest)
+        for (let index = updates.length - 2; index >= 0; index--) {
+            const update = updates[index];
+            const updateHTML = `
+                <div class="accordion-item older-update">
+                    <h2 class="accordion-header" id="heading${index + 1}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse${index + 1}" aria-expanded="false" aria-controls="collapse${index + 1}">
+                            <h3>Update ${index + 1}</h3>
+                        </button>
+                    </h2>
+                    <div id="collapse${index + 1}" class="accordion-collapse collapse" aria-labelledby="heading${index + 1}"
+                        data-bs-parent="#updatesAccordion">
+                        <div class="accordion-body">
+                            ${update}
+                        </div>
+                    </div>
+                </div>
+            `;
+            updatesAccordion.insertAdjacentHTML("beforeend", updateHTML);
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
