@@ -2,37 +2,233 @@
     font-family: 'All American';
     src: url("assets/font/All_American.ttf");
 }
+
 @font-face {
-    font-family: "Khmer Os Bokor";
-    src: url("assets/font/KhmerOSbokor.ttf");
+    font-family: 'KhmerOSbokor';
+    src: url('assets/font/KhmerOSbokor.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.command h3 {
+    margin: 0;
+    color : 333;
+    font-family: 'KhmerOSbokor', sans-serif;
+    text-shadow: 1px 1px 2px orange;
+}
+
+.command p {
+    font-family: 'KhmerOSbokor', sans-serif;
+    color : #333;
+    text-shadow: 1px 1px 2px orange;
+    margin: 5px 0;
 }
 body {
-    margin: 0;
-    text-align: center;
-    background-color:sienna;
-    background-image: url("assets/image/space.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: darkgray;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 0;
 }
-h1 {
-    font-size: 4em;
-    font-family: "Khmer Os Bokor";
-    color:slategray
+
+header {
+    background-color: orange;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
 }
-h2 {
-    font-size: 4em;
+
+.container {
+    margin: 0 auto;
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+.bot-name,
+.hero h1,
+.features h2 {
     font-family: 'All American';
-    color:orange;
-    display: inline-block;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: orange;
+}
+
+.hero {
+    background-color: #343a40;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.features {
+    padding: 20px 0;
+    background-image: url("assets/image/space.gif");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.card-body {
+    background-color: rgba(169, 169, 169, 0.8);
+}
+#commandsContainer {
+    background-image: url('assets/image/space.gif'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    padding: 20px; /* Adds spacing inside the container */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    color: white; /* Ensures text is visible on darker backgrounds */
+}
+
+.policy-content,
+.commands-content {
+    background-color: gray
+};
+.updates-content {
+    background-color: #d3d3d3;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'All American';
+    color: orange;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: orange;
+    font-family: 'All American';
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.command {
+    display: inline-block; /* Allow commands to flow inline if space allows */
+    max-width: 100%; /* Prevent overflow */
+    margin: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    vertical-align: top;
+    width: 300px; /* Set a maximum consistent width */
+    /**/
+    background-color: darkgray; /* Slightly transparent white background */
+    border-radius: 20px; /* Makes the corners more rounded */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for depth */
+    padding: 15px; /* Adds spacing inside the box */
+    margin-bottom: 15px; /* Adds space between boxes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+.command:hover {
+    transform: translateY(-5px); /* Moves the box slightly upwards */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhances the shadow */
+    background-color: rgb(203, 136, 94); /* Makes the background fully opaque */
+}
+
+/* Optional: Add cursor change on hover */
+.command:hover {
+    cursor: pointer; /* Changes cursor to a pointer */
+}
+.update {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: orange;
+    border-radius: 5px;
+    color: white;
+}
+footer {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #343a40;
+    color: white;
     width: 100%;
 }
-.text-box {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px; /* Add some space inside the box */
-    border-radius: 5px; /* Optional: Rounds the corners of the box */
-    display: inline-block; /* Allows the box to shrink-wrap to the content */
-    margin: 10px; /* Adds some space outside the box */
+
+a {
+    color: orange;
+    text-decoration: none;
 }
-.container {
-    text-align: left; /* Aligns the content to the left */
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.accordion-item {
+    background-color: orange;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.accordion-button {
+    color: white;
+    background-color: orange;
+    border: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #ff851b;
+}
+
+.accordion-body {
+    background-color: #ff851b;
+    color: white;
+}
+
+.latest-update {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.older-update {
+    font-size: 0.9em;
+    color: #bbb;
 }
